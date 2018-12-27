@@ -22,4 +22,4 @@ Add a `BendGrassWhenEnabled` or `BendGrassWhenVisible` component to a gameobject
 
 You can also add your own implementation of the `IGrassBender` interface instead of using the built-in bender components.
 
-The bending grass shader replaces Unity's default `Hidden/TerrainEngine/Details/BillboardWavingDoublePass` shader used for the terrain grass when `Billboard` option is enabled. It additionally allows to control the wind waving power via the tint alpha; when alpha is zero, the wind won't affect the grass at all.
+The bending grass shader replaces Unity's default `Hidden/TerrainEngine/Details/BillboardWavingDoublePass` shader used for the terrain grass when `Billboard` option is enabled. It additionally allows to control the wind waving power via the healthy/dry color tint alpha; when alpha of the both colors is zero, the wind won't affect the grass at all.
