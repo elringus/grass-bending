@@ -47,7 +47,7 @@ Shader "Hidden/TerrainEngine/Details/BillboardWavingDoublePass"
             float distToBender = distance(float3(vertexWorldPos.x, 0, vertexWorldPos.z), float3(benderWorldPos.x, 0, benderWorldPos.z));
             float bendPower = (bendRadius - min(bendRadius, distToBender)) / (bendRadius + 0.001);
             float3 bendDir = normalize(vertexWorldPos - benderWorldPos);
-            float2 vertexOffset = bendDir.xz * bendPower * v.texcoord.y * v.texcoord.y * 2;
+            float2 vertexOffset = bendDir.xz * bendPower * v.texcoord.y * v.tangent.y;
             v.vertex.xz += lerp(float2(0, 0), vertexOffset, saturate(bendRadius * v.color.w));
         }
 
