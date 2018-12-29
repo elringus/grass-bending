@@ -73,7 +73,7 @@ Shader "Hidden/TerrainEngine/Details/BillboardWavingDoublePass"
     {
         Tags
         {
-            "Queue" = "Geometry+200"
+            "Queue" = "Geometry+501"
             "IgnoreProjector" = "True"
             "RenderType" = "GrassBillboard"
             "DisableBatching" = "True"
