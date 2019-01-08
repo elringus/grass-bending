@@ -7,7 +7,7 @@ namespace GrassBending
     {
         public Vector3 Position => transform.position;
         public float BendRadius => bendRadius;
-        public float Priority => priority;
+        public int Priority => priority;
 
         [Tooltip("Radius of the grass bending sphere."), Range(0.1f, 10f)]
         [SerializeField] private float bendRadius = 1f;

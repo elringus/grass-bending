@@ -18,6 +18,6 @@ namespace GrassBending
         /// <summary>
         /// Bend source priority.
         /// </summary>
-        float Priority { get; }
+        int Priority { get; }
     }
 }
