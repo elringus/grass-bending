@@ -5,7 +5,6 @@ Either download and import a [standalone Unity package](https://github.com/Elrin
 The package contains a shader used for billboarded terrain details with waving and bending support and components to provide the required bend data to the shader.
 
 ![](https://i.gyazo.com/147e29dbee2d98e79d13022eea2f0a66.gif)
-![](https://i.gyazo.com/621b7f528ff828c98d270d4c952225a8.gif)
 
 ## How to use
 Paint grass on the terrain. Make sure the grass is billboarded (it will use a default shader otherwise).
