@@ -1,7 +1,5 @@
-## Download package
-For Unity 2018.3 and later: [GrassBending.unitypackage](https://github.com/Elringus/GrassBending/releases/download/v0.2-alpha/GrassBending.unitypackage). Check [releases](https://github.com/Elringus/GrassBending/releases) for previous versions support.
-
-Please be aware that you don't need to clone the whole repository in order to use the extension in your project. Either download package from the link above or extract `Assets/GrassBending` folder from the repository project – it contains all the required assets; other stuff is just for testing purposes.
+## Installation
+Either download and import a [standalone Unity package](https://github.com/Elringus/GrassBending/releases/download/v0.3-alpha/GrassBending.unitypackage) or add `"com.elringus.grassbending": "https://github.com/Elringus/GrassBending.git#package"` as a dependency for your project's `Packages/manifest.json` ([guide](https://docs.unity3d.com/Manual/upm-git.html)).
 
 ## Description
 The package contains a shader used for billboarded terrain details with waving and bending support and components to provide the required bend data to the shader.
