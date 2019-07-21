@@ -1,0 +1,11 @@
+{
+  "name": "com.elringus.grassbending",
+  "version": "0.3.0",
+  "displayName": "GrassBending",
+  "description": "A replacement for Unity's terrain grass shader with alpha blended rendering and touch bending effect",
+  "unity": "2019.1",
+  "author": {
+    "name": "Elringus",
+    "url": "https://elringus.me"
+  } 
+}
