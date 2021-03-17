@@ -3,6 +3,8 @@
 [RequireComponent(typeof(Animator))]
 public class Locomotion : MonoBehaviour
 {
+    private static readonly int moveSpeedId = Animator.StringToHash("MoveSpeed");
+
     private Animator animator;
     private Vector3 positionLastFrame;
 
@@ -19,7 +21,7 @@ public class Locomotion : MonoBehaviour
     private void Update ()
     {
         var distance = Vector3.Distance(transform.position, positionLastFrame);
-        animator.SetFloat("MoveSpeed", distance * Time.deltaTime);
+        animator.SetFloat(moveSpeedId, distance * Time.deltaTime);
         positionLastFrame = transform.position;
     }
 }
