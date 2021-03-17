@@ -7,7 +7,7 @@ namespace GrassBending
     /// will trigger grass bending while rendered by any camera on the scene.
     /// </summary>
     [RequireComponent(typeof(Renderer)), DisallowMultipleComponent]
-    public class BendGrassWhenVisible : MonoBehaviourGrassBender
+    public sealed class BendGrassWhenVisible : MonoBehaviourGrassBender
     {
         private void OnBecameVisible ()
         {
