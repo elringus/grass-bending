@@ -1,5 +1,5 @@
 ## Installation
-Use [UPM](https://docs.unity3d.com/Manual/upm-ui.html) to install the package via the following git URL: `https://github.com/Elringus/GrassBending.git#package` or download and import [GrassBending.unitypackage](https://github.com/Elringus/GrassBending/raw/master/GrassBending.unitypackage) manually.
+Use [UPM](https://docs.unity3d.com/Manual/upm-ui.html) to install the package via the following git URL: `https://github.com/elringus/grass-bending.git#package` or download and import [GrassBending.unitypackage](https://github.com/elringus/grass-bending/raw/main/GrassBending.unitypackage) manually.
 
 ![](https://i.gyazo.com/b54e9daa9a483d9bf7f74f0e94b2d38a.gif)
 
