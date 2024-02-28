@@ -6,7 +6,7 @@ EditorSettings:
   serializedVersion: 9
   m_ExternalVersionControlSupport: Visible Meta Files
   m_SerializationMode: 2
-  m_LineEndingsForNewScripts: 2
+  m_LineEndingsForNewScripts: 1
   m_DefaultBehaviorMode: 0
   m_PrefabRegularEnvironment: {fileID: 0}
   m_PrefabUIEnvironment: {fileID: 0}
@@ -33,3 +33,4 @@ EditorSettings:
   m_CacheServerNamespacePrefix: default
   m_CacheServerEnableDownload: 1
   m_CacheServerEnableUpload: 1
+  m_CacheServerValidationMode: 2

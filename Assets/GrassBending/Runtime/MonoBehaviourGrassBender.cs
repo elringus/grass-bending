@@ -11,6 +11,6 @@ namespace GrassBending
         [Tooltip("Radius of the grass bending sphere."), Range(0.1f, 10f)]
         [SerializeField] private float bendRadius = 1f;
         [Tooltip("When concurrent bend sources limit is exceeded, benders with lower priority values will be served first.")]
-        [SerializeField] private int priority = 0;
+        [SerializeField] private int priority;
     }
 }
