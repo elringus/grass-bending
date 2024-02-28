@@ -1,12 +1,12 @@
-## Installation
-Use [UPM](https://docs.unity3d.com/Manual/upm-ui.html) to install the package via the following git URL: `https://github.com/elringus/grass-bending.git#package` or download and import [GrassBending.unitypackage](https://github.com/elringus/grass-bending/raw/main/GrassBending.unitypackage) manually.
-
-![](https://i.gyazo.com/b54e9daa9a483d9bf7f74f0e94b2d38a.gif)
-
 ## Description
 The package contains a shader used for billboarded terrain details with waving and bending support and components to provide the required bend data to the shader.
 
 ![](https://i.gyazo.com/147e29dbee2d98e79d13022eea2f0a66.gif)
+
+## Installation
+Use [UPM](https://docs.unity3d.com/Manual/upm-ui.html) to install the package via the following git URL: `https://github.com/elringus/grass-bending.git#package` or download and import [GrassBending.unitypackage](https://github.com/elringus/grass-bending/raw/main/GrassBending.unitypackage) manually.
+
+![](https://i.gyazo.com/b54e9daa9a483d9bf7f74f0e94b2d38a.gif)
 
 ## How to use
 Paint grass on the terrain. Make sure the grass is billboarded (it will use a default shader otherwise).
