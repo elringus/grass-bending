@@ -11,10 +11,10 @@ float4 _Color;
 float4 _LightColor0;
 
 // Outline thickness
-float  _EdgeThickness = 1.0;
+float _EdgeThickness = 1.0;
 
 // Depth bias to help prevent z-fighting
-float  _DepthBias = 0.00012;
+float _DepthBias = 0.00012;
 
 float4 _MainTex_ST;
 
@@ -23,8 +23,8 @@ sampler2D _MainTex;
 
 struct v2f
 {
-	float4 pos : SV_POSITION;
-	float2 UV  : TEXCOORD0;
+    float4 pos : SV_POSITION;
+    float2 UV : TEXCOORD0;
 };
 
 // Float types
@@ -42,35 +42,35 @@ struct v2f
 // Vertex shader
 v2f vert(appdata_base v)
 {
-	float4 projPos = UnityObjectToClipPos(v.vertex);
-	float4 projNormal = normalize(UnityObjectToClipPos(float4(v.normal, 0)));
+    float4 projPos = UnityObjectToClipPos(v.vertex);
+    float4 projNormal = normalize(UnityObjectToClipPos(float4(v.normal, 0)));
 
-	float distanceToCamera = OUTLINE_DISTANCE_SCALE * projPos.z;
-	float normalScale = _EdgeThickness *
-		lerp(OUTLINE_NORMAL_SCALE_MIN, OUTLINE_NORMAL_SCALE_MAX, distanceToCamera);
+    float distanceToCamera = OUTLINE_DISTANCE_SCALE * projPos.z;
+    float normalScale = _EdgeThickness *
+        lerp(OUTLINE_NORMAL_SCALE_MIN, OUTLINE_NORMAL_SCALE_MAX, distanceToCamera);
 
-	v2f o;
-	o.pos = projPos + normalScale * projNormal;
-	o.pos.z += _DepthBias;
-	o.UV = v.texcoord.xy;
+    v2f o;
+    o.pos = projPos + normalScale * projNormal;
+    o.pos.z += _DepthBias;
+    o.UV = v.texcoord.xy;
 
-	return o;
+    return o;
 }
 
 // Get the maximum component of a 3-component color
 inline float_t GetMaxComponent(float3_t inColor)
 {
-	return max(max(inColor.r, inColor.g), inColor.b);
+    return max(max(inColor.r, inColor.g), inColor.b);
 }
 
 // Function to fake setting the saturation of a color. Not a true HSL computation.
 inline float3_t SetSaturation(float3_t inColor, float_t inSaturation)
 {
-	// Compute the saturated color to be one where all components smaller than the max are set to 0.
-	// Note that this is just an approximation.
-	float_t maxComponent = GetMaxComponent(inColor) - 0.0001;
-	float3_t saturatedColor = step(maxComponent.rrr, inColor) * inColor;
-	return lerp(inColor, saturatedColor, inSaturation);
+    // Compute the saturated color to be one where all components smaller than the max are set to 0.
+    // Note that this is just an approximation.
+    float_t maxComponent = GetMaxComponent(inColor) - 0.0001;
+    float3_t saturatedColor = step(maxComponent.rrr, inColor) * inColor;
+    return lerp(inColor, saturatedColor, inSaturation);
 }
 
 // Outline color parameters. Tweak as desired
@@ -80,11 +80,11 @@ inline float3_t SetSaturation(float3_t inColor, float_t inSaturation)
 // Fragment shader
 float4_t frag(v2f i) : COLOR
 {
-	float4_t mainMapColor = tex2D(_MainTex, i.UV);
+    float4_t mainMapColor = tex2D(_MainTex, i.UV);
 
-	float3_t outlineColor = BRIGHTNESS_FACTOR
-		* SetSaturation(mainMapColor.rgb, SATURATION_FACTOR)
-		* mainMapColor.rgb;
+    float3_t outlineColor = BRIGHTNESS_FACTOR
+        * SetSaturation(mainMapColor.rgb, SATURATION_FACTOR)
+        * mainMapColor.rgb;
 
-	return float4_t(outlineColor, mainMapColor.a) * _Color * _LightColor0;
+    return float4_t(outlineColor, mainMapColor.a) * _Color * _LightColor0;
 }
