@@ -1,7 +1,7 @@
-
-// Used for billboarded terrain details; waving and bending are controlled by the alpha of the waving tint.
+// Used for bill-boarded terrain details; waving and bending are controlled by the alpha of the waving tint.
 // Replaces terrain grass shader (when billboard option is enabled).
-Shader "Hidden/TerrainEngine/Details/BillboardWavingDoublePass" 
+
+Shader "Hidden/TerrainEngine/Details/BillboardWavingDoublePass"
 {
     Properties
     {
@@ -84,7 +84,7 @@ Shader "Hidden/TerrainEngine/Details/BillboardWavingDoublePass"
         LOD 200
 
         // First pass: render any pixels that are more than [_Cutoff] opaque (alpha testing).
-        // This will yeild the correct depth sorting, but the edges will look jagged.
+        // This will yield the correct depth sorting, but the edges will look jagged.
         Pass
         {
             CGPROGRAM
@@ -106,7 +106,7 @@ Shader "Hidden/TerrainEngine/Details/BillboardWavingDoublePass"
         }
 
         // Second pass: render the semitransparent details using alpha blending.
-        // This will fix the jagged edges, though in potenitally wrong depth order.
+        // This will fix the jagged edges, though in potentially wrong depth order.
         Pass
         {
             ZWrite off
